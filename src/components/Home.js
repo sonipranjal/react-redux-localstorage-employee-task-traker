@@ -96,15 +96,17 @@ const Home = () => {
                           case 'project':
                             return employee.projectInfo
                               .toLowerCase()
-                              .includes(searchQuery);
+                              .includes(searchQuery.toLowerCase());
                           case 'tasks':
                             return employee.todos.some((todo) =>
-                              todo.description.includes(searchQuery)
+                              todo.description.includes(
+                                searchQuery.toLowerCase()
+                              )
                             );
                           default:
                             return employee.name
                               .toLowerCase()
-                              .includes(searchQuery);
+                              .includes(searchQuery.toLowerCase());
                         }
                       })
                       .map((employee) => (
