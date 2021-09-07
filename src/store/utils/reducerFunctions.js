@@ -1,5 +1,8 @@
 export const reducerFunctions = {
   setFromLocalStorage: (state, action) => {
+    if (!action.payload) {
+      return;
+    }
     state.employees = action.payload;
   },
   addNewEmployee: (state, action) => {
